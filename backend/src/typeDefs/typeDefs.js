@@ -1,9 +1,10 @@
 const { gql } = require('apollo-server');
 
 module.exports = gql`
-type Query {
-  getAllUsers: [User!]!
-}
+  type Query {
+    getAllUsers: [User!]!
+    getUser (id: ID!): User
+  }
 
   type User {
     id: ID!
@@ -15,5 +16,3 @@ type Query {
     createUser(name: String!, age: Int!): User!
   }
 `
-
-
